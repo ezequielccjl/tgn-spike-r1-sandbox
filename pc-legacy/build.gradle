@@ -1,0 +1,24 @@
+// SPIKE R1: modelos Realm en una android library (docs/poc/spike-r1-plan.md, parte A).
+// Java puro: sin kotlin-kapt, el plugin de Realm usa annotationProcessor.
+apply plugin: 'com.android.library'
+apply plugin: 'realm-android'
+
+android {
+    namespace 'com.tgn.tgnmovil.pclegacy'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+    }
+}
+
+dependencies {
+    // implementation y no api: en afterEvaluate el plugin de Realm (Realm.kt:138) saca
+    // realm-android-library de 'api' y en una library no lo vuelve a agregar.
+    // :app declara su propia dependencia porque sigue usando la API de Realm.
+    implementation 'io.realm:realm-android-library:10.19.0'
+    // androidx.annotation llega transitivo por play-services-maps. jetbrains: solo compilacion
+    compileOnly 'org.jetbrains:annotations:24.1.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.android.gms:play-services-maps:19.1.0'
+}

@@ -1,0 +1,10 @@
+# Gradle / Android
+.gradle/
+.kotlin/
+build/
+local.properties
+*.iml
+.idea/
+# Bases Realm: nunca versionar (datos de produccion)
+*.realm
+*.realm.*

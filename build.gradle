@@ -1,0 +1,24 @@
+// Mismas versiones que TGN: AGP 8.12.0, Kotlin 2.1.20, Realm 10.19.0, Gradle 9.3.1 (wrapper copiado)
+buildscript {
+    ext {
+        minSdkVersion = 26
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.12.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20'
+        classpath 'io.realm:realm-gradle-plugin:10.19.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}

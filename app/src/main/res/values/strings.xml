@@ -1,0 +1,4 @@
+<resources>
+    <!-- dist:title de :pc: tiene que estar en la base -->
+    <string name="title_pc">Proteccion Catodica</string>
+</resources>

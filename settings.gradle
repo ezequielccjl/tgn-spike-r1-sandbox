@@ -1,0 +1,3 @@
+// Sandbox del spike R1 parte B (docs/poc/spike-r1-plan.md en TGNMovil_RN). No es parte del repo.
+rootProject.name = 'tgn-spike-r1-sandbox'
+include ':app', ':pc-legacy', ':pc'

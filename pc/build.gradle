@@ -1,0 +1,25 @@
+// :pc (dynamic feature, a demanda). Empaqueta :pc-legacy (modelos + Realm). Sin el plugin realm-android:
+// no acepta dynamic-feature (realm-java#6375); los proxies se generan en :pc-legacy.
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.tgn.spike.pc'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions { jvmTarget = '17' }
+}
+
+dependencies {
+    implementation project(':app')
+    implementation project(':pc-legacy')
+    // Leccion de la parte A: :pc-legacy declara Realm como implementation, quien usa la API la declara
+    implementation 'io.realm:realm-android-library:10.19.0'
+}
